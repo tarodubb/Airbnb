@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useCallback } from 'react';
 import { IoMdClose } from 'react-icons/io';
-
+import Button from '../Button';
 interface ModalProps {
   isOpen?: boolean;
   onClose: () => void;
@@ -145,8 +145,7 @@ const Modal: React.FC<ModalProps> = ({
                     w-full
                   '
                 >
-
-
+                  <Button label='My Button'/>
                 </div>
               </div>
             </div>
