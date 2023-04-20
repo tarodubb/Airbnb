@@ -5,6 +5,7 @@ import Navbar from './components/Navbar/Navbar';
 import ClientOnly from './components/ClientOnly';
 import RegisterModal from './components/Modals/RegisterModal';
 import ToastProvider from './providers/ToasterProvider';
+import LoginModal from './components/Modals/LoginModal';
 
 
 export const metadata = {
@@ -26,6 +27,7 @@ export default function RootLayout({
       <body className={font.className}>
         <ClientOnly>
           <ToastProvider />
+          <LoginModal />
           <RegisterModal />
           <Navbar />
         </ClientOnly>
