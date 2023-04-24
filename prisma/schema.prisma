@@ -41,6 +41,7 @@ model Account {
   session_state      String?
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
   @@unique([provider, providerAccountId])
 }
 
@@ -57,6 +58,7 @@ model Listing {
   locationValue String
   userId String @db.ObjectId
   price Int
+
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
   reservations Reservation[]
 }
