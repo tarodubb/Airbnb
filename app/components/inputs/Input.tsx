@@ -4,8 +4,8 @@ import {
   FieldErrors,
   FieldValues,
   UseFormRegister
-} from 'react-hook-form';
-import { BiDollar } from 'react-icons/bi';
+} from "react-hook-form";
+import { BiDollar } from "react-icons/bi";
 
 interface InputProps {
   id: string;
@@ -17,34 +17,35 @@ interface InputProps {
   register: UseFormRegister<FieldValues>,
   errors: FieldErrors
 }
+
 const Input: React.FC<InputProps> = ({
   id,
   label,
-  type = 'text',
+  type = "text",
   disabled,
   formatPrice,
-  required,
   register,
-  errors
+  required,
+  errors,
 }) => {
   return (
-    <div className='w-full relative'>
+    <div className="w-full relative">
       {formatPrice && (
         <BiDollar
           size={24}
-          className='
+          className="
             text-neutral-700
             absolute
             top-5
             left-2
-          '
+          "
         />
       )}
       <input
         id={id}
         disabled={disabled}
         {...register(id, { required })}
-        placeholder=' '
+        placeholder=" "
         type={type}
         className={`
           peer
@@ -57,11 +58,11 @@ const Input: React.FC<InputProps> = ({
           rounded-md
           outline-none
           transition
-          disabled:opacity-700
+          disabled:opacity-70
           disabled:cursor-not-allowed
           ${formatPrice ? 'pl-9' : 'pl-4'}
-          ${errors[id] ? 'border-rose-500': 'border-neutral-300'}
-          ${errors[id] ? 'focus:border-rose-500': 'focus:border-black'}
+          ${errors[id] ? 'border-rose-500' : 'border-neutral-300'}
+          ${errors[id] ? 'focus:border-rose-500' : 'focus:border-black'}
         `}
       />
       <label
@@ -74,7 +75,7 @@ const Input: React.FC<InputProps> = ({
           top-5
           z-10
           origin-[0]
-          ${formatPrice? 'left-9' : 'left-4'}
+          ${formatPrice ? 'left-9' : 'left-4'}
           peer-placeholder-shown:scale-100
           peer-placeholder-shown:translate-y-0
           peer-focus:scale-75
@@ -85,7 +86,7 @@ const Input: React.FC<InputProps> = ({
         {label}
       </label>
     </div>
-  );
-};
+   );
+}
 
 export default Input;
